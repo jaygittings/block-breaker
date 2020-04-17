@@ -138,9 +138,7 @@ MonoBehaviour:
   launchX: 3
   launchY: 5
   sounds:
-  - {fileID: 8300000, guid: f69deb48508d2cc48bd4bdc6891c14f2, type: 3}
-  - {fileID: 8300000, guid: 25547b176cfbfac46aa8b969fb6e8629, type: 3}
-  - {fileID: 8300000, guid: 2756fa47e5e99f047a81e9a622e11ab5, type: 3}
+  - {fileID: 8300000, guid: 76a8ff39af6b64249b8fd62c09a29123, type: 3}
   randomPush: 0.1
 --- !u!82 &-3785370282739147479
 AudioSource:
@@ -154,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
