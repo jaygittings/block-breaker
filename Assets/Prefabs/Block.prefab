@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3c8c6116fe06e9540b0b64ef4cd19e69, type: 3}
-  m_Color: {r: 0.49977186, g: 1, b: 0.4009434, a: 1}
+  m_Color: {r: 0.019607844, g: 0.9490196, b: 0.85882354, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 62e49afafddca94469fe30a93fe9717e, type: 3}
-  particleEffect: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  particleEffect: {fileID: 2583709580678343226, guid: e5a858ae80fc0bc4c9ef4e132e33845f,
+    type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 3c8c6116fe06e9540b0b64ef4cd19e69, type: 3}
 --- !u!61 &4621800769101158870

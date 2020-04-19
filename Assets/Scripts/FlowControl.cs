@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class FlowControl : MonoBehaviour
 {
     State state;
+    [SerializeField] public Animator transition;
+    [SerializeField] public float transitionTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,22 +24,49 @@ public class FlowControl : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Level01");
+        //SceneManager.LoadScene("Level01");
+        StartCoroutine(LoadLevel("Level01"));
     }
 
     public void LoadHighScores()
     {
-        SceneManager.LoadScene("High Scores");
+        StartCoroutine(LoadLevel("High Scores"));
     }
 
     public void LoanMainMenu()
     {
-        SceneManager.LoadScene("Start Scene");
+        Debug.Log("In LoadMainMenu");
+        StartCoroutine(LoadLevel("Start Scene"));
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        //play animation
+        transition.SetTrigger("Start");
+        
+        //wait
+        yield return new WaitForSeconds(transitionTime);
+
+        //load scene
+        SceneManager.LoadScene(levelIndex);
+    }
+
+    IEnumerator LoadLevel(String name)
+    {
+        Debug.Log("In LoadLevel");
+        //play animation
+        transition.SetTrigger("Start");
+
+        //wait
+        yield return new WaitForSeconds(transitionTime);
+
+        //load scene
+        SceneManager.LoadScene(name);
     }
 
 }
