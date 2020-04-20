@@ -35,7 +35,7 @@ public class FlowControl : MonoBehaviour
 
     public void LoanMainMenu()
     {
-        Debug.Log("In LoadMainMenu");
+        //Debug.Log("In LoadMainMenu");
         StartCoroutine(LoadLevel("Start Scene"));
     }
 
@@ -58,7 +58,6 @@ public class FlowControl : MonoBehaviour
 
     IEnumerator LoadLevel(String name)
     {
-        Debug.Log("In LoadLevel");
         //play animation
         transition.SetTrigger("Start");
 

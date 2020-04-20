@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class State: MonoBehaviour
     int playerScore = 0;
     TextMeshProUGUI score = null;
 
+    [SerializeField] bool isAutoPlayEnabled = false;
+
     private void Awake()
     {
         //Singleton pattern for game object
@@ -28,6 +31,11 @@ public class State: MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
         }
+    }
+
+    internal bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
     }
 
     void Start()
@@ -81,17 +89,46 @@ public class State: MonoBehaviour
 
     private void OnDestroy()
     {
-        int score = PlayerPrefs.GetInt("Highscore", 0);
-        if (playerScore > score)
-        {
-            PlayerPrefs.SetInt("Highscore", playerScore);
-            PlayerPrefs.Save();
-        }
+        UpdateHighScore();
 
         foreach(Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+    }
+
+    private void UpdateHighScore()
+    {
+        string scoreString = PlayerPrefs.GetString("Highscores", "0,0,0,0,0,0,0,0,0,0");
+
+        string[] scores = scoreString.Split(',');
+
+
+        for(int i = 0; i < scores.Length; i++)
+        {
+            if(int.TryParse(scores[i], out var num))
+            {
+                if(playerScore >= num)
+                {
+                    scores[i] = playerScore.ToString();
+                    playerScore = num;
+                }
+            }
+        }
+
+        scoreString = string.Join(",", scores);
+        PlayerPrefs.SetString("Highscores", scoreString);
+
+
+        //int score = PlayerPrefs.GetInt("Highscore", 0);
+        //if (playerScore > score)
+        //{
+        //    PlayerPrefs.SetInt("Highscore", playerScore);
+        //    PlayerPrefs.Save();
+        //}
+
+        PlayerPrefs.Save();
+
     }
 
     public void ResetGame()
