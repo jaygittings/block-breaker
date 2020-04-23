@@ -39,6 +39,11 @@ public class FlowControl : MonoBehaviour
         StartCoroutine(LoadLevel("Start Scene"));
     }
 
+    public void LoadCredits()
+    {
+        StartCoroutine(LoadLevel("Credits"));
+    }
+
     public void QuitGame()
     {
         Application.Quit();

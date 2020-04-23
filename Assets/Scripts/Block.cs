@@ -13,6 +13,7 @@ public class Block : MonoBehaviour
 
     //cache references
     State state = null;
+    bool reportedHit = false;
     //GameObject background = null;
     //SpriteRenderer backgroundRenderer = null;
     //Color backgroundColor = new Color();
@@ -60,8 +61,11 @@ public class Block : MonoBehaviour
             if(currentHits >= maxHits)
             {
                 TriggerParticleEffect();
-                if (state != null)
-                    state.RemoveBlock();
+                if (state != null && !reportedHit)
+                {
+                    state.RemoveBlock(maxHits);
+                    reportedHit = true;
+                }
                 Destroy(this.gameObject, 0.1f);
             }
             else

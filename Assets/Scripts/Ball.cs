@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float launchY = 0;
     [SerializeField] AudioClip[] sounds = null;
     [SerializeField] float randomPush = .2f;
+    //[SerializeField] float levelMultiplier = 1.1f;
 
     //cache
     Rigidbody2D ballRigidBody = null;

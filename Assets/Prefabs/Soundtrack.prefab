@@ -142,5 +142,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songList:
   - {fileID: 8300000, guid: 6243968b6c5338e4ab70eeee0401d436, type: 3}
+  - {fileID: 8300000, guid: 2692c342db01b9742b7432dc330ec110, type: 3}
+  - {fileID: 8300000, guid: 3ad39aa5e9dcd4941bf3623ad8a0b7fb, type: 3}
   - {fileID: 8300000, guid: 92c4eaaadaafdf945bf2fc88b62fdf1f, type: 3}
+  - {fileID: 8300000, guid: 82ed32af3815cc748b2af37edd7ba866, type: 3}
+  - {fileID: 8300000, guid: b5b0fa7c77264a3419e91d27e2e44885, type: 3}
+  - {fileID: 8300000, guid: 98310eefee5492e47a51a4ff782510dd, type: 3}
+  - {fileID: 8300000, guid: 7635ac3ae861dc147a8649614d719fe1, type: 3}
+  - {fileID: 8300000, guid: 7102b0de625273d49931f1e9e4ef1eb1, type: 3}
   - {fileID: 8300000, guid: 09a6a94d4da6f714da53093513850b12, type: 3}
+  successStinger: {fileID: 8300000, guid: ba0906f4d79eebe46bbcb8a690449aa7, type: 3}
+  failureStinger: {fileID: 8300000, guid: c77ec97fb108ddd479163197e84000bd, type: 3}

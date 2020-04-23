@@ -16,6 +16,6 @@ public class LoseCollider : MonoBehaviour
     {
         //Debug.Log("You lose.  Collided with " + collision.name);
         state.ResetGame();
-        SceneManager.LoadScene("Game Over");
+        //SceneManager.LoadScene("Game Over");
     }
 }
