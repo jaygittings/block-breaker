@@ -43,7 +43,14 @@ public class State: MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("loaded: " + scene.name);
+
+        if(scene.name == "Credits")
+        {
+            BeatGame();
+            return;
+        }
+
+        //Debug.Log("loaded: " + scene.name);
         GameObject[] objs = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach(GameObject o in objs)
         {
@@ -212,5 +219,12 @@ public class State: MonoBehaviour
     {
         StartCoroutine(DoLevelEnd("Failure"));
     }
+
+    public void BeatGame()
+    {
+        Destroy(this.gameObject);
+        return;
+    }
+
 
 }

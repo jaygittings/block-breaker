@@ -14,6 +14,8 @@ public class FlowControl : MonoBehaviour
     void Start()
     {
         state = FindObjectOfType<State>();
+        //Debug.Log(transition.GetInstanceID());
+        transition.ResetTrigger("Start");
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class FlowControl : MonoBehaviour
     public void LoanMainMenu()
     {
         //Debug.Log("In LoadMainMenu");
-        StartCoroutine(LoadLevel("Start Scene"));
+        LoadLevel("Start Scene");
     }
 
     public void LoadCredits()

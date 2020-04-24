@@ -10,6 +10,8 @@ public class Ball : MonoBehaviour
     [SerializeField] float launchY = 0;
     [SerializeField] AudioClip[] sounds = null;
     [SerializeField] float randomPush = .2f;
+    [SerializeField] float maxSpeed = 20f;
+    [SerializeField] Vector2 velocity = new Vector2();
     //[SerializeField] float levelMultiplier = 1.1f;
 
     //cache
@@ -72,6 +74,10 @@ public class Ball : MonoBehaviour
         float newX = speed.x + (Random.Range(randomPush, 2 * randomPush) * xDirection);
         float newY = speed.y + (Random.Range(randomPush, 2 * randomPush) * yDirection);
 
+        newY = Mathf.Clamp(newY, -maxSpeed, maxSpeed);
+        newX = Mathf.Clamp(newX, -maxSpeed, maxSpeed);
+
+        velocity = new Vector2(newX, newY);
         ballRigidBody.velocity = new Vector2(newX, newY);
     }
 }
