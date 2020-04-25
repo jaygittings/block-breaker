@@ -759,10 +759,10 @@ Transform:
   - {fileID: 608199800}
   - {fileID: 16201215}
   - {fileID: 993430649}
-  - {fileID: 1704160056}
   - {fileID: 1673886236}
-  - {fileID: 250330266}
+  - {fileID: 1704160056}
   - {fileID: 633012825}
+  - {fileID: 250330266}
   - {fileID: 1626797767}
   - {fileID: 744972780}
   m_Father: {fileID: 0}
@@ -3623,7 +3623,7 @@ PrefabInstance:
     - target: {fileID: 8378194385084528112, guid: 22c4948451e1dd442ab1b83141b81b81,
         type: 3}
       propertyPath: isAutoPlayEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378194385084528112, guid: 22c4948451e1dd442ab1b83141b81b81,
         type: 3}

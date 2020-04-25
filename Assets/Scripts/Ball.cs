@@ -74,6 +74,11 @@ public class Ball : MonoBehaviour
         float newX = speed.x + (Random.Range(randomPush, 2 * randomPush) * xDirection);
         float newY = speed.y + (Random.Range(randomPush, 2 * randomPush) * yDirection);
 
+        if(Mathf.Abs(newY) < .5f)
+        {
+            newY = Mathf.Sign(newY) * 2.0f;
+        }
+
         newY = Mathf.Clamp(newY, -maxSpeed, maxSpeed);
         newX = Mathf.Clamp(newX, -maxSpeed, maxSpeed);
 
